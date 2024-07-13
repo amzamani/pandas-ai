@@ -26,7 +26,7 @@ COPY . /app
 RUN poetry lock --no-update
 
 # Install Python dependencies
-RUN poetry install --no-root
+RUN poetry install --no-root --extras "async"
 
 # Add wait-for-it.sh script to the container
 COPY wait-for-it.sh /wait-for-it.sh

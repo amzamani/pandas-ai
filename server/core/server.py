@@ -56,7 +56,7 @@ def make_middleware() -> List[Middleware]:
     middleware = [
         Middleware(
             CORSMiddleware,
-            allow_origins=["*"],
+            allow_origins=["https://humble-happiness-xpjrvvg67gxcv999-3000.app.github.dev"],
             allow_credentials=True,
             allow_methods=["*"],
             allow_headers=["*"],

@@ -1,5 +1,7 @@
 #!/bin/bash
-
+log() {
+    echo "$(date) - $1"
+}
 
 # Load environment variables from .env file if it exists
 if [ -f .env ]; then

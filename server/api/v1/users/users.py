@@ -9,7 +9,6 @@ from core.factory import Factory
 
 user_router = APIRouter()
 
-
 @user_router.post("/login")
 async def login_user(
     login_user_request: LoginUserRequest,
