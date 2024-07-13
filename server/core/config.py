@@ -19,7 +19,8 @@ class Config(BaseConfig):
     DEFAULT_LOCALE: str = "en_US"
     ENVIRONMENT: str = EnvironmentType.DEVELOPMENT
     POSTGRES_URL: PostgresDsn = (
-        "postgresql+asyncpg://user:password@127.0.0.1:5432/db-name"
+        # "postgresql+asyncpg://user:password@127.0.0.1:5432/db-name"
+        "postgresql://pandasai-db_owner:UH8GAloVXrQ4@ep-blue-night-a1xktbmh.ap-southeast-1.aws.neon.tech/pandasai-db?sslmode=require"
     )
     OPENAI_API_KEY: str = None
     RELEASE_VERSION: str = "0.1.0"
