@@ -2,7 +2,6 @@
 import React, { ReactNode, useEffect } from "react";
 import ContextProvider from "@/contexts/ContextProvider";
 import { usePathname } from "next/navigation";
-import dynamic from "next/dynamic";
 import { getTitleFromPath } from "@/utils/getTitleFromPath";
 import {
   NEXT_PUBLIC_INTERCOM_APP_ID,
@@ -14,6 +13,7 @@ import { Provider as RollbarProvider, ErrorBoundary } from "@rollbar/react";
 import QueryProvider from "./QueryProvider";
 import Intercom from "@/components/Intercom/Intercom";
 import { ToastContainer } from "react-toastify";
+import dynamic from "next/dynamic";
 import "styles/globals.css";
 import "styles/App.css";
 import "styles/multi-range-slider.css";
@@ -47,12 +47,12 @@ export default function AppProvider({ children }: { children: ReactNode }) {
     <>
       <RollbarProvider config={rollbarConfig}>
         <ErrorBoundary>
-          <ContextProvider>
-            <NoSSR>
+          <NoSSR>
+            <ContextProvider>
               <ToastContainer autoClose={3000} className="w-64 text-white" />
               <QueryProvider>{children}</QueryProvider>
-            </NoSSR>
-          </ContextProvider>
+            </ContextProvider>
+          </NoSSR>
         </ErrorBoundary>
       </RollbarProvider>
       <Intercom appID={NEXT_PUBLIC_INTERCOM_APP_ID} />
